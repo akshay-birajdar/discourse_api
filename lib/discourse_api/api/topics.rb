@@ -85,6 +85,14 @@ module DiscourseApi
 
         post("/t/#{topic_id}/change-owner.json", params)
       end
+
+      def bookmark_topic(topic_id)
+        put("/t/#{topic_id}/bookmark.json", topic_id: topic_id)
+      end
+
+      def remove_topic_bookmark(topic_id)
+        put("/t/#{topic_id}/remove_bookmarks", topic_id: topic_id)
+      end
     end
   end
 end
